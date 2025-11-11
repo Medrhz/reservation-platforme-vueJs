@@ -13,16 +13,17 @@
 
   <body class="bg-slate-50 min-h-screen flex flex-col">
     <div id="app" class="flex flex-col min-h-screen">
-      <navbar @navigate="navigate"></navbar>
+      <navbar @navigate="navigate" :is-admin-logged-in="isAdminLoggedIn" @logout="handleLogout"></navbar>
 
       <main class="flex-1">
         <component
           :is="currentViewComponent"
           :last-booking="lastBooking"
           :reservations="reservations"
-          @update-reservations="updateReservations"
           :bookings="allBookings"
+          @update-reservations="updateReservations"
           @booked="handleBooking"
+          @login-success="handleLoginSuccess"
           @navigate="navigate" />
       </main>
 
