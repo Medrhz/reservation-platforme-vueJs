@@ -2,10 +2,24 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <title>RéserV - Plateforme de réservation</title>
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1E6E73", // teal foncé
+              secondary: "#E8F6F7", // teal clair
+              accent: "#0D4F50", // accent plus foncé
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
     <!-- Vue 3 (Production Build) -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
