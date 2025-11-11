@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>RéserV - Plateforme de réservation</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Vue 3 (Production Build) -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  </head>
+
+  <body class="bg-slate-50 min-h-screen flex flex-col">
+    <div id="app" class="flex flex-col min-h-screen">
+      <navbar @navigate="navigate"></navbar>
+
+      <main class="flex-1">
+        <component :is="currentViewComponent" :last-booking="lastBooking" @booked="handleBooking" @navigate="navigate" />
+      </main>
+
+      <footer-bar></footer-bar>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
