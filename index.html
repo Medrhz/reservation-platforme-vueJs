@@ -16,7 +16,14 @@
       <navbar @navigate="navigate"></navbar>
 
       <main class="flex-1">
-        <component :is="currentViewComponent" :last-booking="lastBooking" @booked="handleBooking" @navigate="navigate" />
+        <component
+          :is="currentViewComponent"
+          :last-booking="lastBooking"
+          :reservations="reservations"
+          @update-reservations="updateReservations"
+          :bookings="allBookings"
+          @booked="handleBooking"
+          @navigate="navigate" />
       </main>
 
       <footer-bar></footer-bar>
